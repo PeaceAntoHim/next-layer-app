@@ -1,5 +1,11 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## How to permit you api image
+    first you must look in next config and you can made this code to permit that link
+    " images: {
+    domains: ["Your domain1", "Your domin 2"],
+  },"
+
 ## Getting Started
 
 First, run the development server:
