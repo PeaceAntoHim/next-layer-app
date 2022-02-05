@@ -1,6 +1,7 @@
-import Head from 'next/head'
-import Header from '../components/Header';
+import Head from 'next/head';
 import Nav from '../components/Nav';
+import Header from '../components/Header';
+import Results from '../components/Results';
 
 export default function Home() {
   return (
@@ -17,7 +18,15 @@ export default function Home() {
         {/* Navbar */}
         <Nav />
         {/* Result */}
+        <Results />
 
     </div>
   );
+}
+
+
+export async function getServerSideProps(context) {
+  const genre = context.query.genre;
+
+
 }
