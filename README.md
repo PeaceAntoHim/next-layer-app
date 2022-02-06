@@ -5,7 +5,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
     " images: {
     domains: ["Your domain1", "Your domin 2"],
   },"
-
+  
+## Before you get started
+    first you have get api key in tmdb and than you can made file name is .env.local and write this API_KEY=YOUR_API_KEY from tmdb
+    
 ## Getting Started
 
 First, run the development server:
