@@ -4,7 +4,7 @@ import FlipMove from 'react-flip-move';
 import Nav from '../../components/Nav';
 import Header from '../../components/Header';
 
-export default function Detail({ detail}) {
+export default function Detail({ detail }) {
     const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
   return (
@@ -29,14 +29,14 @@ export default function Detail({ detail}) {
                     `${BASE_URL}${detail.backdrop_path || detail.poster_path}` ||
                     `${BASE_URL}${detail.poster_path}`
                 }
-                height={750}
-                width={900}
+                height={650}
+                width={860}
             />
 
                 <div className="p-2">
-                    <h2 className="mt-1 text-2xl text-white transition-all duration-100 ease-in-out group-hover:font-bold">{detail.title || detail.original_name}</h2>
-                    <p className="max-w-md">{detail.overview}</p>
-                    <p className="flex items-center">
+                    <h1 className="mt-5 mb-5 text-5xl text-white justify-center">{detail.title || detail.original_name}</h1>
+                    <p className="max-w-4xl text-2xl mt-5 ">{detail.overview}</p>
+                    <p className="flex items-center text-xl">
                         {detail.media_type && `${detail.media_type} • `}{" "}
                         {detail.release_date || detail.first_air_date}{" "}
                     </p>
@@ -47,6 +47,8 @@ export default function Detail({ detail}) {
     </div>
   );
 }
+
+
 
 const API_KEY = process.env.API_KEY;
 
