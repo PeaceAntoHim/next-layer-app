@@ -1,15 +1,18 @@
+import Link from 'next/link';
 import Image from 'next/image';
 import { forwardRef } from 'react';
-import { ThumbUpIcon } from '@heroicons/react/outline';
+import { DeviceTabletIcon, ThumbUpIcon } from '@heroicons/react/outline';
 
 const Thumbnail = forwardRef(({ result }, ref) => {
 const BASE_URL = "https://image.tmdb.org/t/p/original/";
 
-    return (
-        <div 
+return (
+    <div 
             ref={ref}
             className="p-2 group cursor-pointer transition duration-200 ease-in transform sm:hover:scale-105 hover:z-50"
         >
+        <Link href={`/detail/${result.id}`}>
+            <a>
             <Image 
                 layouts="responsive"
                 src={
@@ -20,7 +23,7 @@ const BASE_URL = "https://image.tmdb.org/t/p/original/";
                 width={1920}
             />
 
-            <div calssName="p-2">
+            <div className="p-2">
                 <p className="truncate max-w-md">{result.overview}</p>
                 <h2 className="mt-1 text-2xl text-white transition-all duration-100 ease-in-out group-hover:font-bold">{result.title || result.original_name}</h2>
                 <p className="flex items-center opacity-0 group-hover:opacity-100">
@@ -29,9 +32,13 @@ const BASE_URL = "https://image.tmdb.org/t/p/original/";
                     <ThumbUpIcon className="h-5 mx-2" /> {result.vote_count}
                 </p>
             </div>
+            </a>
+        </Link>
         </div>
         
-    );
-})
+        );
+    })
+    
+    
 
 export default Thumbnail;

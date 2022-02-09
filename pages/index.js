@@ -24,8 +24,9 @@ export default function Home({ results }) {
 
     </div>
   );
-}
 
+}
+// console.log(Results);
 
 export async function getServerSideProps(context) {
   const genre = context.query.genre;
@@ -35,6 +36,7 @@ export async function getServerSideProps(context) {
         requests[genre]?.url || requests.fetchTrending.url 
     }`
   ).then((res) => res.json());
+  // console.log(request);
 
   return {
     props: {
